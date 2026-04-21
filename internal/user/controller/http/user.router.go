@@ -1,8 +1,8 @@
 package http
 
 import (
-	"github.com/anonystick/go-drunk-backend-api-by-ddd-java/pkg/response"
 	"github.com/gin-gonic/gin"
+	"github.com/leedev/go-rest-ddd/pkg/response"
 )
 
 func RegisterUserRoutes(rg *gin.RouterGroup, handler *UserHandler) {

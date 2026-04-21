@@ -3,8 +3,8 @@ package http
 import (
 	"fmt"
 
-	"github.com/anonystick/go-drunk-backend-api-by-ddd-java/internal/user/application/service"
 	"github.com/gin-gonic/gin"
+	"github.com/leedev/go-rest-ddd/internal/user/application/service"
 )
 
 type UserHandler struct {
