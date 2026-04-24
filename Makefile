@@ -27,7 +27,7 @@ dev:
 
 # Build the binary
 build:
-	$(GOBUILD) -o $(BINARY_NAME) -v
+	$(GOBUILD) -o $(BINARY_NAME) -v $(MAIN_RUN)
 
 # Clean build artifacts
 clean:
@@ -39,19 +39,19 @@ swag:
 	
 # Cross-platform builds
 build-linux:
-	GOOS=linux GOARCH=amd64 $(GOBUILD) -o $(BINARY_NAME)-linux-amd64 -v
+	GOOS=linux GOARCH=amd64 $(GOBUILD) -o $(BINARY_NAME)-linux-amd64 -v $(MAIN_RUN)
 
 build-windows:
-	GOOS=windows GOARCH=amd64 $(GOBUILD) -o $(BINARY_NAME)-windows-amd64.exe -v
+	GOOS=windows GOARCH=amd64 $(GOBUILD) -o $(BINARY_NAME)-windows-amd64.exe -v $(MAIN_RUN)
 
 build-mac:
-	GOOS=darwin GOARCH=amd64 $(GOBUILD) -o $(BINARY_NAME)-darwin-amd64 -v
+	GOOS=darwin GOARCH=amd64 $(GOBUILD) -o $(BINARY_NAME)-darwin-amd64 -v $(MAIN_RUN)
 
 # Build for all platforms
 build-all: build-linux build-windows build-mac
 
 # Install to GOPATH/bin
 install:
-	$(GOBUILD) -o $(GOPATH)/bin/$(BINARY_NAME) -v
+	$(GOBUILD) -o $(GOPATH)/bin/$(BINARY_NAME) -v $(MAIN_RUN)
 
 .PHONY: all build clean build-linux build-windows build-mac build-all install start dev
