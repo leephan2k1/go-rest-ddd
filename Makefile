@@ -12,12 +12,18 @@ BINARY_NAME=server-cli
 MAIN_RUN = ./cmd/server/main.go
 SWAG=$(GOBIN)/swag
 
+AIR=$(GOBIN)/air
+
 # Default target is to build the binary
 all: build
 
 start:
 	@echo "Starting development server..."
 	$(GOCMD) run $(MAIN_RUN)
+
+dev:
+	@echo "Starting development server with Air..."
+	$(AIR) -c .air.toml
 
 # Build the binary
 build:
@@ -48,4 +54,4 @@ build-all: build-linux build-windows build-mac
 install:
 	$(GOBUILD) -o $(GOPATH)/bin/$(BINARY_NAME) -v
 
-.PHONY: all build clean build-linux build-windows build-mac build-all install 
+.PHONY: all build clean build-linux build-windows build-mac build-all install start dev

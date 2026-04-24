@@ -55,3 +55,4 @@ go.work.sum
 # --- System Files ---
 Thumbs.db
 desktop.ini
+tmp
