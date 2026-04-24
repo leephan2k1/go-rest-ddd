@@ -14,6 +14,7 @@ server-cli-*
 # Ignore all environment configuration files
 .env
 .env.*
+.env_dev
 # Explicitly ignore seen dev env
  
 # --- Go Specific ---
